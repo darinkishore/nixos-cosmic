@@ -9,13 +9,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-tasks";
-  version = "0.1.0-unstable-2024-07-03";
+  version = "0.1.0-unstable-2024-07-09";
 
   src = fetchFromGitHub {
     owner = "edfloreshz";
     repo = "cosmic-tasks";
-    rev = "0e8c728c88a9cac1bac130eb083ca0fe58c7121d";
-    hash = "sha256-0bXzeKnJ5MIl7vCo+7kyXm3L6QrCdm5sPreca1SPi8U=";
+    rev = "79e4599d7a1b93421d607fcf9ed92f5630ea0876";
+    hash = "sha256-EmyzlpUJxm7CGvP6NRuOyU6kr6rB60i1V/XSlDQJ3Lg=";
   };
 
   cargoLock = {
@@ -52,7 +52,7 @@ rustPlatform.buildRustPackage rec {
     homepage = "https://github.com/edfloreshz/cosmic-tasks";
     description = "Simple task management application for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ lilyinstarlight ];
+    maintainers = with maintainers; [  ]; #lilyinstarlight
     platforms = platforms.linux;
     mainProgram = "cosmic-tasks";
   };
