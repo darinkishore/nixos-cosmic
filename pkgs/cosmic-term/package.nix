@@ -12,13 +12,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-term";
-  version = "0-unstable-2024-06-20";
+  version = "0-unstable-2024-07-08";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-term";
-    rev = "09e2073f9b5b0e579fa406f9825554eab091931e";
-    hash = "sha256-wC3oq1GpOOX3fUcIq7DjjJWSluUieoie+/uNrlH9SD0=";
+    rev = "a734205d6ea3ffa874d6b16aac15334d817e5342";
+    hash = "sha256-4YppKuFpHvH0Y3BfbsFyd5pgoWUZ35Sb6QkNRWv5t2M=";
   };
 
   cargoLock = {
@@ -69,7 +69,7 @@ rustPlatform.buildRustPackage rec {
     homepage = "https://github.com/pop-os/cosmic-term";
     description = "Terminal for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ ahoneybun nyanbinary lilyinstarlight ];
+    maintainers = with maintainers; [ ahoneybun nyanbinary  ]; #lilyinstarlight
     platforms = platforms.linux;
     mainProgram = "cosmic-term";
   };

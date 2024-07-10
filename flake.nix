@@ -6,6 +6,11 @@
       url = "github:nix-community/flake-compat";
       flake = false;
     };
+
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, ... }: let
@@ -15,7 +20,15 @@
       packagesFor = pkgs: import ./pkgs { inherit pkgs; };
     };
 
-    packages = forAllSystems (system: self.lib.packagesFor nixpkgs.legacyPackages.${system});
+    packages = forAllSystems (system: let
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [
+          self.overlays.default
+          self.inputs.rust-overlay.overlays.default
+        ];
+      };
+    in self.lib.packagesFor pkgs);
 
     overlays = {
       default = final: prev: import ./pkgs { inherit final prev; };
@@ -25,7 +38,15 @@
       default = import ./nixos { cosmicOverlay = self.overlays.default; };
     };
 
-    legacyPackages = forAllSystems (system: let pkgs = nixpkgs.legacyPackages.${system}; in {
+    legacyPackages = forAllSystems (system: let
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [
+          self.overlays.default
+          self.inputs.rust-overlay.overlays.default
+        ];
+      };
+    in {
       update = pkgs.writeShellApplication {
         name = "cosmic-update";
 
@@ -46,7 +67,7 @@
               continue
             fi
 
-            nix-update --commit --version branch=HEAD "$attr"
+            nix-update --version branch=HEAD "$attr"
           done
         '';
       };

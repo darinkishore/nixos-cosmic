@@ -12,13 +12,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-store";
-  version = "0-unstable-2024-07-03";
+  version = "0-unstable-2024-07-07";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-store";
-    rev = "f323ff2152554c4d8f1ed4731805fc9f5ba436c6";
-    hash = "sha256-7rSBcVlmnRHPGoQRyFOGBYqBuEww9f/2R5phy82u8Ig=";
+    rev = "42451043c7349fe4ec8e429a151c157cfca9eb02";
+    hash = "sha256-A+UuHHRQYtaPxK/AIL7IdktSl2mkWjYY+wnEd0LCEvw=";
   };
 
   cargoLock = {
@@ -63,7 +63,7 @@ rustPlatform.buildRustPackage rec {
     homepage = "https://github.com/pop-os/cosmic-store";
     description = "App Store for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ ahoneybun nyanbinary lilyinstarlight ];
+    maintainers = with maintainers; [ ahoneybun nyanbinary  ]; #lilyinstarlight
     platforms = platforms.linux;
   };
 }

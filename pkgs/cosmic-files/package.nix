@@ -9,13 +9,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-files";
-  version = "0-unstable-2024-07-04";
+  version = "0-unstable-2024-07-09";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-files";
-    rev = "5ec14f86b38536a9836281bb2439653b99d16081";
-    hash = "sha256-Pmc5SGcuaEyQsZdlaVf+zzMUJUcq66cCS94zT43CLBk=";
+    rev = "a3ea6d5197360e7bdf87594a5e8e86390188587d";
+    hash = "sha256-LrHzytHgT2QvefyArflctZ7KVHt8pRMCJ2RmqrxKrxo=";
   };
 
   cargoLock = {
@@ -25,9 +25,10 @@ rustPlatform.buildRustPackage rec {
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
       "clipboard_macos-0.1.0" = "sha256-cG5vnkiyDlQnbEfV2sPbmBYKv1hd3pjJrymfZb8ziKk=";
       "cosmic-client-toolkit-0.1.0" = "sha256-1XtyEvednEMN4MApxTQid4eed19dEN5ZBDt/XRjuda0=";
-      "cosmic-config-0.1.0" = "sha256-l4LKJ19/5UOMm8oWhhVFvoN4Kbar/EMwBKaiA8RZ7VU=";
-      "cosmic-text-0.12.0" = "sha256-x7UMzlzYkWySFgSQTO1rRn+pyPG9tXKpJ7gzx/wpm8U=";
+      "cosmic-config-0.1.0" = "sha256-pYeCUx9reBMT6x6/xapR1p81kiq5jhb024IBBOha/R8=";
+      "cosmic-text-0.12.0" = "sha256-VUUCcW5XnkmCB8cQ5t2xT70wVD5WKXEOPNgNd2xod2A=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
+      "fs_extra-1.3.0" = "sha256-ftg5oanoqhipPnbUsqnA4aZcyHqn9XsINJdrStIPLoE=";
       "glyphon-0.5.0" = "sha256-j1HrbEpUBqazWqNfJhpyjWuxYAxkvbXzRKeSouUoPWg=";
       "smithay-clipboard-0.8.0" = "sha256-pBQZ+UXo9hZ907mfpcZk+a+8pKrIWdczVvPkjT3TS8U=";
       "softbuffer-0.4.1" = "sha256-a0bUFz6O8CWRweNt/OxTvflnPYwO5nm6vsyc/WcXyNg=";
@@ -59,7 +60,7 @@ rustPlatform.buildRustPackage rec {
     homepage = "https://github.com/pop-os/cosmic-files";
     description = "File Manager for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ ahoneybun nyanbinary lilyinstarlight ];
+    maintainers = with maintainers; [ ahoneybun nyanbinary  ]; #lilyinstarlight
     platforms = platforms.linux;
   };
 }

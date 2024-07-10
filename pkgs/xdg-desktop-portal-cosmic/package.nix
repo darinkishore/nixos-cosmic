@@ -10,13 +10,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "xdg-desktop-portal-cosmic";
-  version = "0-unstable-2024-07-03";
+  version = "0-unstable-2024-07-10";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "xdg-desktop-portal-cosmic";
-    rev = "b221b3ea5edfce94d08a3d0506a5980d6fea8aa6";
-    hash = "sha256-xpOJ+w5g0sRWJi1W6+W/s6hhDfoSARQGZkKAvOM0fvs=";
+    rev = "177dca259b4d16dd54944d2b9279968bd9bd7a6a";
+    hash = "sha256-2XfnrAQfZuMFlSXfQtChhdsV460MJthO6GILxv3b3vM=";
   };
 
   cargoLock = {
@@ -58,7 +58,7 @@ rustPlatform.buildRustPackage {
     homepage = "https://github.com/pop-os/xdg-desktop-portal-cosmic";
     description = "XDG Desktop Portal for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ nyanbinary lilyinstarlight ];
+    maintainers = with maintainers; [ nyanbinary  ]; #lilyinstarlight
     mainProgram = "xdg-desktop-portal-cosmic";
     platforms = platforms.linux;
   };

@@ -15,13 +15,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-edit";
-  version = "0-unstable-2024-06-20";
+  version = "0-unstable-2024-07-09";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-edit";
-    rev = "e64bdac21c52391ac287d797a5342b8f6faee7f0";
-    hash = "sha256-f230VTu/R4sLY6KxPKFeODusBkqKFK4/ncKbVkG+fc4=";
+    rev = "d7e46938aeb559c76296f5450a08f03ab075c1cf";
+    hash = "sha256-Pq0yA5lS/mjX6BNPrzl17C+3bYu1iTks4zPbOOVT2yQ=";
   };
 
   cargoLock = {
@@ -69,7 +69,7 @@ rustPlatform.buildRustPackage rec {
     homepage = "https://github.com/pop-os/cosmic-edit";
     description = "Text Editor for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ ahoneybun nyanbinary lilyinstarlight ];
+    maintainers = with maintainers; [ ahoneybun nyanbinary  ]; #lilyinstarlight
     platforms = platforms.linux;
   };
 }
