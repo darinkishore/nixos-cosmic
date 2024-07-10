@@ -15,13 +15,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-applets";
-  version = "0-unstable-2024-07-02";
+  version = "0-unstable-2024-07-09";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-applets";
-    rev = "a0145bf106fb5b2dc2170ebf98aad68dc02ec0a5";
-    hash = "sha256-viDJaf/dxJJvQjU9C5csFf4KolM0WqW6L3+swPDtMv0=";
+    rev = "4ceac0c57ba09cce66ef4fe5dfc758768faad19f";
+    hash = "sha256-OqS6oqzsvPKemvs5sGYq9bCG8iGQAA5sQCkt//zU8x4=";
   };
 
   cargoLock = {
@@ -63,7 +63,7 @@ rustPlatform.buildRustPackage {
     homepage = "https://github.com/pop-os/cosmic-applets";
     description = "Applets for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ qyliss nyanbinary lilyinstarlight ];
+    maintainers = with maintainers; [ qyliss nyanbinary  ];
     platforms = platforms.linux;
   };
 }
