@@ -31,12 +31,14 @@
     in self.lib.packagesFor pkgs);
 
     overlays = {
-      default = final: prev: import ./pkgs { inherit final prev; };
-      rust-overlay = final: prev: import ./rust-overlay { inherit final prev; };
+      default = final: prev: import ./pkgs {
+        inherit final prev;
+        rustOverlay = self.inputs.rust-overlay.overlays.default final prev;
+      };
     };
 
     nixosModules = {
-      default = import ./nixos { cosmicOverlay = self.overlays.rust-overlay; };
+      default = import ./nixos { cosmicOverlay = self.overlays.default; };
     };
 
     legacyPackages = forAllSystems (system: let
